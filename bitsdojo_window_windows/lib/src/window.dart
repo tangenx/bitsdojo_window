@@ -1,5 +1,4 @@
 import 'dart:ffi' hide Size;
-import 'dart:ui';
 import 'package:flutter/painting.dart';
 
 import 'package:ffi/ffi.dart';
@@ -88,8 +87,8 @@ class WinWindow extends WinDesktopWindow {
   double systemMetric(int metric, {int dpiToUse = 0}) {
     final windowDpi = dpiToUse != 0 ? dpiToUse : this.dpi;
     double result = dpiAware
-      ? GetSystemMetricsForDpi(metric, windowDpi).toDouble()
-      : GetSystemMetrics(metric).toDouble();
+        ? GetSystemMetricsForDpi(metric, windowDpi).toDouble()
+        : GetSystemMetrics(metric).toDouble();
     return result;
   }
 
